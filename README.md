@@ -42,6 +42,9 @@ submitted as they stand:
    not the real document. Replace everything between the `PLACEHOLDER` and
    `END PLACEHOLDER` comments with the finished HTML, keeping the `<h1>` and
    the page head.
+   **In the same change, delete the amber banner at the top of `/support`** —
+   it exists only to say those two documents are unfinished, so it becomes
+   false the moment they are published.
 2. ~~**`/support` has no contact address.**~~ **Done.** `/support` now links
    `support@fourballer.com` (Microsoft 365, confirmed working). App Store
    Connect requires a Support URL and a reviewer will follow it, so this had
