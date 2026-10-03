@@ -42,10 +42,10 @@ submitted as they stand:
    not the real document. Replace everything between the `PLACEHOLDER` and
    `END PLACEHOLDER` comments with the finished HTML, keeping the `<h1>` and
    the page head.
-2. **`/support` has no contact address.** App Store Connect requires a Support
-   URL and a reviewer will follow it; a page with no working route is a
-   rejection risk. No address has been invented — replace
-   `[SUPPORT ADDRESS TO BE CONFIRMED]` with a real monitored mailbox.
+2. ~~**`/support` has no contact address.**~~ **Done.** `/support` now links
+   `support@fourballer.com` (Microsoft 365, confirmed working). App Store
+   Connect requires a Support URL and a reviewer will follow it, so this had
+   to be a real monitored mailbox rather than an invented one.
 3. **Every page carries `<meta name="robots" content="noindex">`** so the
    placeholders cannot be indexed. **Remove that tag** from each page as its
    real content lands.
