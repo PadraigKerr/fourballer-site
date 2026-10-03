@@ -148,3 +148,40 @@ footer a { color: var(--grey); }
   a:hover { color: #8FD3A2; }
   header.bar { background: var(--green-dark); }
 }
+
+/* Legal pages (#218). Bruce's documents are built from <section> blocks with
+ * an in-page contents list; these give those the same card look the rest of
+ * the site uses, rather than shipping his stylesheet alongside mine and
+ * having two sources for one look. */
+main > section {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin: 0 0 16px;
+  scroll-margin-top: 16px;
+}
+main > section h2 { border-top: 0; padding-top: 0; margin-top: 0; }
+main > section h2:not(:first-child) { margin-top: 1.5em; }
+
+nav.toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px; }
+nav.toc a {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav.toc a:hover { background: var(--green-light); }
+
+blockquote {
+  border-left: 4px solid #D4A017;
+  background: var(--amber-bg);
+  color: var(--amber-fg);
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: 0 10px 10px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }

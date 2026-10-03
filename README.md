@@ -33,29 +33,24 @@ CNAME             fourballer.com
 Directories rather than `privacy.html` so the URLs are clean
 (`fourballer.com/privacy`) without server-side rewriting.
 
-## ⚠️ Before this goes live
+## Before this goes live
 
-Three things are unfinished, and each is a rejection risk if the URLs are
-submitted as they stand:
-
-1. **`/privacy` and `/terms` are placeholders.** Each says, loudly, that it is
-   not the real document. Replace everything between the `PLACEHOLDER` and
-   `END PLACEHOLDER` comments with the finished HTML, keeping the `<h1>` and
-   the page head.
-   **In the same change, delete the amber banner at the top of `/support`** —
-   it exists only to say those two documents are unfinished, so it becomes
-   false the moment they are published.
+1. ~~**`/privacy` and `/terms` are placeholders.**~~ **Done, 3 Oct.** Bruce's
+   finished documents are published, effective 3 October 2026. His prose is
+   verbatim — verified word-for-word against his files. The only markup change
+   was converting literal `- ` bullets, which his markdown-to-HTML converter had
+   left as text inside `<p>`, into real `<ul>` lists; no words were altered.
+   The amber banner on `/support` is gone with them.
 2. ~~**`/support` has no contact address.**~~ **Done.** `/support` now links
    `support@fourballer.com` (Microsoft 365, confirmed working). App Store
    Connect requires a Support URL and a reviewer will follow it, so this had
    to be a real monitored mailbox rather than an invented one.
-3. **Every page carries `<meta name="robots" content="noindex">`** so the
-   placeholders cannot be indexed. **Remove that tag** from each page as its
-   real content lands.
+3. ~~**Every page carries `noindex`.**~~ **Done, 3 Oct** — removed from all
+   four pages now that the real documents are published.
 
-**Do not point DNS at this site until 1 and 2 are done.** A page reading "not
-yet published" at `fourballer.com/privacy` is worse than no page at all, and
-the App Store requires a real document at that URL.
+**DNS is now the only thing left.** The three content blockers above are
+cleared, so the site is ready for the apex records to move — Patrick's hands,
+at GoDaddy. Enforce HTTPS can be switched on once the certificate provisions.
 
 ## DNS
 
