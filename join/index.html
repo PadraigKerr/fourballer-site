@@ -21,8 +21,6 @@
          until Bruce rules on it. -->
     <h1>You've been invited to Fourballer</h1>
 
-    <p id="opening" hidden>Opening the app&hellip;</p>
-
     <p id="open-row" hidden>
       <a id="open-link" href="#" style="display:inline-block;padding:12px 18px;border-radius:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:600">Open in Fourballer</a>
     </p>
@@ -57,12 +55,9 @@
   var appLink = 'fourballer://join?t=' + encodeURIComponent(t);
   var a = document.getElementById('open-link');
   a.href = appLink;
+  // Button only: opening the app's link automatically shows an
+  // "invalid address" alert on iPhone when the app isn't installed.
   document.getElementById('open-row').hidden = false;
-  document.getElementById('opening').hidden = false;
-  // Try the app once. If it isn't installed nothing happens, and the
-  // install links stay on the page.
-  window.location.href = appLink;
-  setTimeout(function () { document.getElementById('opening').hidden = true; }, 2500);
 })();
 </script>
 
