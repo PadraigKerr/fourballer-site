@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Join — Fourballer</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="bar">
+  <a class="wordmark" href="/">Fourballer</a>
+  <div class="tag">Invitation</div>
+</header>
+
+<main>
+  <div class="card">
+    <!-- PLACEHOLDER WORDING (#1561): every line on this page is a placeholder
+         until Bruce rules on it. -->
+    <h1>You've been invited to Fourballer</h1>
+
+    <p id="opening" hidden>Opening the app&hellip;</p>
+
+    <p id="open-row" hidden>
+      <a id="open-link" href="#" style="display:inline-block;padding:12px 18px;border-radius:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:600">Open in Fourballer</a>
+    </p>
+
+    <h2>Don't have the app yet?</h2>
+    <p>
+      Fourballer is in testing. Install it, then tap your invitation link again.
+    </p>
+    <nav class="links">
+      <!-- PLACEHOLDER: the TestFlight and Play testing links go here. -->
+      <a href="https://apps.apple.com/app/testflight/id899247664">iPhone: TestFlight</a>
+      <a href="mailto:support@fourballer.com?subject=Android%20test%20invitation">Android: ask us for an invitation</a>
+    </nav>
+
+    <p id="bad" hidden>
+      This invitation link isn't complete. Ask the person who invited you to
+      send it again.
+    </p>
+  </div>
+</main>
+
+<script>
+// Reads the invitation code from ?t= and hands it to the app.
+// No storage, no network requests, nothing sent anywhere: the code only
+// goes into the app's own link on this device.
+(function () {
+  var t = new URLSearchParams(window.location.search).get('t');
+  if (!t || !/^[A-Za-z0-9_-]{4,64}$/.test(t)) {
+    document.getElementById('bad').hidden = false;
+    return;
+  }
+  var appLink = 'fourballer://join?t=' + encodeURIComponent(t);
+  var a = document.getElementById('open-link');
+  a.href = appLink;
+  document.getElementById('open-row').hidden = false;
+  document.getElementById('opening').hidden = false;
+  // Try the app once. If it isn't installed nothing happens, and the
+  // install links stay on the page.
+  window.location.href = appLink;
+  setTimeout(function () { document.getElementById('opening').hidden = true; }, 2500);
+})();
+</script>
+
+</body>
+</html>
